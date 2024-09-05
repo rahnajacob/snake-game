@@ -25,31 +25,31 @@
  const gridWidth = 20;
  const gridHeight = 20;
  const totalCellCount = gridWidth * gridHeight;
- //const snakeStartingPosition = grid[2] //grid index of 2, length of three
- //console.log(snakeStartingPosition)
-//  const snakeStartingDirection = grid[3]; //grid[i + 1]
+
 
 /*---------- Variables (state) ---------*/
 
-// let currentScoreValue;
-// //starts as zero, +10 for every fruit consumed
+let currentScoreValue;
+//starts as zero, +10 for every fruit consumed
 
-// let gridDisplay;
-// // starts out empty, then visual of snake movement + length updating plus randomised fruit drops 
+let gridDisplay;
+// starts out empty, then visual of snake movement + length updating plus randomised fruit drops 
 
-// let snakeArray = [];
-// // length = 3 at the start of the game, css styling of bg-color: "colour"
+let snake = [];
+// length = 3 at the start of the game, css styling of bg-color: "colour"
 
-// let fruit;
-// //css styling: 1 cell of colouring, class of fruit
+let snakeDirection;
 
-// let winState;
-// //set to false
+let fruit;
+//css styling: 1 cell of colouring, class of fruit
 
-// let loseState;
-// //set to false
+let winState;
+//set to false
 
-// let intervalTime;
+let loseState;
+//set to false
+
+let intervalTime;
 // //1000 or 1500ms at the beginning?
 
 // let snakeColour; //OPT
@@ -61,8 +61,7 @@
 // //look up local storage- JS, use to store the values instead
 
 /*----- Cached Element References  -----*/
-const grid = document.querySelector(".grid")
-console.log(grid)
+const grid = document.getElementById("grid")
 const cellEls = []
  // newGameButton (aka play/reset button)
  // resetHighScoreButton
@@ -80,7 +79,7 @@ function createGrid(){
         cell.classList.add("cell")
         cell.setAttribute("id", i)
         cell.innerText = i
-        cell.style.width = `${100/gridWidth}%`
+        cell.style.width = `${100/gridWidth}%` //why temp literal here? why didn't the usual method work?
         cell.style.height = `${100/gridHeight}%`
         cellEls.push(cell)
         grid.appendChild(cell)
@@ -94,25 +93,49 @@ function createGrid(){
 }
 createGrid()
 
+// /*------------------ Snake and Fruit Constants -------------*/
+// snake = cellEls[2, 1, 0] //head at cellEls index of 2, length of three
+// snakeDirection = cellEls[3]; //cellEls[i + 1]
+// let fruitPosition = -1
+
+
 // function init () {
+//     winState = false
+//     currentScore = 0
+//     console.log("working init")
+//     render()
 //     // winState = false
 //     // currentScore = 0
 //     // toggleMusicButton.audio.mute = true //OPT
 //     // render()
 // }
 
-// function render() {
-//     //update gridDisplay
-//     //update messageDisplay
-// }
+// // function render() {
+// //     //update gridDisplay
+// //     //update messageDisplay
+// // }
 
-// function placeFruit() {
-//     //IF grid has empty positions in array
-//         //THEN Math.random, Math.floor(place one fruit in an empty array position)
-//     //ELSE return false
-// }
+//generates fruit and makes sure it does not overlap with snake
+function makeFruit() {
+    do {
+        fruit = Math.floor(Math.random() * totalCellCount)
+    } while (snake.includes(fruit))
+        return fruit
+}
+
+//if apple does not exist, generate it
+function placeFruit() {
+    
+    //IF grid has empty positions in array - edit: poor logic, scrap plan
+        //THEN Math.random, Math.floor(place one fruit in an empty array position)
+    //ELSE return false
+}
+
+
 
 // function snakeEating() {
+
+
 //     //IF current snake array contains class of fruit, remove fruit and +1 to snake array?
 //     //IF position of snake[0] on the grid = position of fruit on the grid, add points?
 //     //snakeArray.push(one more unit)
@@ -121,6 +144,11 @@ createGrid()
 // }
 
 // function snakeMovement(e) {
+
+
+
+
+
 //     //arrowButton = e.target.key (confirm whether key or keyCode)
 //     //IF left: snake[0]at grid position moves to grid[i - 1]
 //         //AND grid[i] % gridWidth != 0
@@ -160,7 +188,7 @@ createGrid()
 //     //set highScore value = 0
 // }
 /*----------- Event Listeners ----------*/
-// newGameButton.addEventListener("click", init)
-// resetHighScoreButton.addEventListener("click", resetHighScore)
-// document.addEventListener("keyup", snakeMovement)
+newGameButton.addEventListener("click", init)
+resetHighScoreButton.addEventListener("click", resetHighScore)
+document.addEventListener("keyup", snakeMovement)
 
