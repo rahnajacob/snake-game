@@ -34,6 +34,8 @@ const snakeInit = [2, 1, 0];
 
 let gameOver = false;
 
+let winState = false;
+
 let snake = [...snakeInit];
 
 let fruit = Math.floor(Math.random() * totalCellCount);
@@ -125,7 +127,7 @@ function updateSnake(){
         gameOver = true
         window.alert("Game over!")
         clearInterval(gameInterval)
-        return; 
+        return 
     }
 
     newSnake.unshift(head) 
@@ -139,6 +141,15 @@ function updateSnake(){
     }
 
     snake = newSnake 
+
+    //check for win state
+    if (snake.length === totalCellCount){
+        gameOver = true
+        winState = true
+        window.alert("You win!")
+        clearInterval(gameInterval)
+        return
+    }
     createGrid()
     updateHighScore()
 }
