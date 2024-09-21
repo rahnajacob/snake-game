@@ -7,6 +7,54 @@ body {
     background-color: rgb(189, 157, 98);
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#grid-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(25, 1fr);
+    grid-template-rows: repeat(25, 1fr);
+    /* width: 500px; */
+    height: 70vh; 
+    aspect-ratio: 1;
+    grid-gap: 1px;
+    background-color: lightblue;
+    box-shadow: 0px 0px 20px 0px grey;
+}
+
+.cell {
+    background-color: lightgray;
+    border: 1px solid black;
+    aspect-ratio: 1; /* Ensure cells are square */
+    width:100%;
+    height:100%;
+}
+
+
+
+
+
+
+
+
+
+/* * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(189, 157, 98);
+    display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -16,25 +64,45 @@ body {
     display: flex;
     align-content: center;
     justify-content: center;
-}
-.grid-container {
+} */
+/* .grid-container {
     min-height: 100vh;
+    max-width:50%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
-.grid {
+/* .grid {
+    width: 100vmin;  /* Makes sure grid's width scales with viewport */
+    /*height: 100vmin; Makes sure grid's height scales with viewport */
+    /* max-width: 600px;  
+    max-height: 600px;  */
+    /* box-shadow: 0px 0px 20px 0px grey;
+    background-color: lightblue;
+    display: grid;
+    grid-template-columns: repeat(25, 1fr);
+    grid-template-rows: repeat(25, 1fr);
+    grid-gap: 1px;
+} */
+
+/* .grid {
     width: 600px;
     height: 600px;
     box-shadow: 0px 0px 20px 0px grey;
     background-color: lightblue;
-    /* display: flex;
+    display: grid;
+    grid-template-columns: repeat(25, 1fr);
+    grid-template-rows: repeat(25, 1fr);
+    grid-gap: 1px;
     justify-content: center;
-    align-items: center; */
-}
+    align-items: center;
+} */
 
-.cell {
+/* .cell {
     border: 1px solid black;
     display: inline-block;
-}
+    /* width: 24px;
+    height: 24px; */
+   /* background-color: lightgray;
+} */
