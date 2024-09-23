@@ -14,5 +14,8 @@ JavaScript, HTML, CSS
 - Add sounds effects for (1) eating fruit (2) winning (3) losing
 - Add a game soundtrack with a toggle off button
 
+## Link to planning material
+<a href="https://trello.com/invite/b/66eed4effaaac31e36ca5e82/ATTIb0b9defa82c7796c68a534128acfbafc85A78862/ga-seb81-project-1">Trello Board</a>
+
 # Playable link
 (TBA) 
