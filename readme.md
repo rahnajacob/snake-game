@@ -18,4 +18,4 @@ JavaScript, HTML, CSS
 <a href="https://trello.com/invite/b/66eed4effaaac31e36ca5e82/ATTIb0b9defa82c7796c68a534128acfbafc85A78862/ga-seb81-project-1">Trello Board</a>
 
 # Playable link
-(TBA) 
+<a href="https://rahnajacob.github.io/snake-game/">Snake Game</a> 
